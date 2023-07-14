@@ -18,8 +18,8 @@ cpt_G <- array(c(0.0, 1.0, 0.8, 0.2, 0.9, 0.1, 0.99, 0.01),
 grs_wiki = custom.fit(wiki, dist = list(R = cpt_R, S = cpt_S, G = cpt_G))
 
 print(paste("Fitted model: ", grs_wiki))
+print("Probablity it rained given that grass is wet:")
 # class(grs_wiki)
 for (i in 1:10) {
-	print(paste("Probablity it rained given that grass is wet:",
-		    cpquery(grs_wiki, event = (R == "Rain_T"), evidence = (G == "GWet_T"))))
+	print( cpquery(grs_wiki, event = (R == "Rain_T"), evidence = (G == "GWet_T")))
 }
