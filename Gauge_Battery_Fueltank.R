@@ -27,3 +27,7 @@ print("Probablity the tank is actually empty given that the gauge indicates so:"
 for (i in 1:10) {
 	print(cpquery(gbf, event = (F == "Tank_empty"), evidence = (G == "G_tank_empty")))
 }
+print("Probablity the tank is empty given that the gauge indicates so with the battery flat:")
+for (i in 1:10) {
+	print(cpquery(gbf, event = (F == "Tank_empty"), evidence = ((G == "G_tank_empty") & (B == "Battery_flat"))))
+}
